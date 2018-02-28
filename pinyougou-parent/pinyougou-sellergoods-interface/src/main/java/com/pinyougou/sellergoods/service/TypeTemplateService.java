@@ -3,6 +3,7 @@ import com.pinyougou.pojo.TbTypeTemplate;
 import entity.PageResult;
 
 import java.util.List;
+import java.util.Map;
 /**
  * 服务层接口
  * @author Administrator
@@ -57,5 +58,12 @@ public interface TypeTemplateService {
 	 * @return
 	 */
 	public PageResult findPage(TbTypeTemplate typeTemplate, int pageNum, int pageSize);
+
+	/**
+	 * 返回规格列表
+	 * @param id
+	 * @return
+	 */
+	public List<Map> findSpecList(Long id);
 	
 }

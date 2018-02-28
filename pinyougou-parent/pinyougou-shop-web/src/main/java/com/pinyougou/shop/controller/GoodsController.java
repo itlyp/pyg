@@ -6,6 +6,7 @@ import com.pinyougou.pojogroup.Goods;
 import com.pinyougou.sellergoods.service.GoodsService;
 import entity.PageResult;
 import entity.Result;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,6 +50,8 @@ public class GoodsController {
 	 */
 	@RequestMapping("/add")
 	public Result add(@RequestBody Goods goods){
+		String name = SecurityContextHolder.getContext().getAuthentication().getName();
+		goods.getGoods().setSellerId(name);
 		try {
 			goodsService.add(goods);
 			return new Result(true, "增加成功");
