@@ -1,6 +1,5 @@
 package com.pinyougou.sellergoods.service.impl;
-import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import com.alibaba.dubbo.config.annotation.Service;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -9,15 +8,18 @@ import com.pinyougou.pojo.TbFreightTemplate;
 import com.pinyougou.pojo.TbFreightTemplateExample;
 import com.pinyougou.pojo.TbFreightTemplateExample.Criteria;
 import com.pinyougou.sellergoods.service.FreightTemplateService;
-
 import entity.PageResult;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 /**
  * 服务实现层
  * @author Administrator
  *
  */
 @Service
+@Transactional
 public class FreightTemplateServiceImpl implements FreightTemplateService {
 
 	@Autowired
